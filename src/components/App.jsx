@@ -14,12 +14,6 @@ export const App = () => {
   const [isError, setIsError] = useState(false);
   const [isEnd, setIsEnd] = useState(false);
 
-  // async componentDidUpdate(_prevProps, prevState){
-  //   if(prevState.searchQuery !== searchQuery || prevState.currentPage !== currentPage){
-  //     await fetchImages();
-  //   }
-  // }
-
   useEffect(()=> {
     const fetchImages = async () => {
       if (!searchQuery) return;
@@ -42,6 +36,7 @@ export const App = () => {
     }
 
     fetchImages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[searchQuery, currentPage]);
 
   const handleSearchSubmit = query => {
